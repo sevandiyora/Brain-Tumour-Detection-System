@@ -4,6 +4,22 @@ This project is a Flask-based web application that detects and segments brain tu
 
 ---
 
+## Live Demo
+https://brain-tumour-detection-system-xzyz.onrender.com
+
+## AI Model
+https://huggingface.co/spaces/sevendiyora/brain-tumor-detection-api
+
+## Features
+- Brain MRI tumor segmentation
+- U-Net deep learning model
+- Heatmap visualization
+- PDF report generation
+- Flask web application
+- Hugging Face AI deployment
+
+---
+
 ## Project Architecture
 
 User Uploads MRI
