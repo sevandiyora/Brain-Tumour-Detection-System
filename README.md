@@ -67,6 +67,9 @@ brain_tumor_webapp/
 │
 └── report.pdf
 ```
+## Live Demo
+
+https://huggingface.co/spaces/sevendiyora/brain-tumor-detection-api
 
 ---
 
