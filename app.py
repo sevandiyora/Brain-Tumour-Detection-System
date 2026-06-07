@@ -17,7 +17,7 @@ last_conf = 0
 app = Flask(__name__)
 
 # 🔥 GRADIO API
-client = Client("https://huggingface.co/spaces/sevendiyora/brain-tumor-detection-api")
+client = Client("sevendiyora/brain-tumor-detection-api")
 
 # App routes 
 @app.route("/")
@@ -408,11 +408,12 @@ def predict():
     # ---- U-NET ----
     if model in ["U-Net", "Both"]:
         result_unet = client.predict(
-            image=handle_file(filepath),
-            model_choice="U-Net",
-            api_name="/segment_image"
+            handle_file(filepath)
         )
-        overlay_unet, mask_unet, conf_unet = result_unet
+
+        overlay_unet, mask_unet = result_unet
+
+        conf_unet = 1.0
 
         overlay_u_path = save_file(overlay_unet, "overlay_unet")
         mask_u_path = save_file(mask_unet, "mask_unet")
@@ -424,7 +425,7 @@ def predict():
         heatmap_u = create_heatmap(filepath, real_mask_u)
 
     # ---- MASK R-CNN ----
-    if model in ["Mask R-CNN", "Both"]:
+    if False:
         result_rcnn = client.predict(
             image=handle_file(filepath),
             model_choice="Mask R-CNN",
