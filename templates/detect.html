@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>🧠 AI Tumor Detection</h2>
+        <div>
+            <a href="/" class="active">Home</a>
+            <a href="/about">About</a>
+            <a href="/how">How</a>
+            <a href="/future">Future</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- UPLOAD CARD -->
+        <div class="card">
+            <h2>Upload MRI Scan</h2>
+
+            <input type="file" id="imageInput" class="input-file"><br><br>
+
+            <label>Select Model:</label><br><br>
+
+            <select id="model" class="dropdown">
+                <option value="U-Net">U-Net</option>
+                <option value="Mask R-CNN">Mask R-CNN</option>
+                <option value="Both">Both</option>
+            </select>
+
+            <br><br>
+
+            <button onclick="predict()">Run AI Detection</button>
+
+            <div id="loader" class="loader">
+                <div class="spinner"></div>
+                <p>AI Processing...</p>
+            </div>
+        </div>
+
+        <!-- COMPARISON VIEW -->
+        <div class="card">
+            <h3>Comparison View</h3>
+            <div id="comparisonContainer" class="compare-container"></div>
+        </div>
+
+        <!-- HEATMAP VIEW -->
+        <div class="card">
+            <h3>Heatmap Visualization</h3>
+            <div id="heatmapContainer" class="compare-container"></div>
+        </div>
+
+        <!-- RESULTS SUMMARY -->
+        <div class="card">
+            <h3 style="text-align:center;">Analysis Summary</h3>
+
+            <p id="confidence" style="font-size:18px; margin-bottom:15px;"></p>
+
+            <button onclick="downloadPDF()">Download Medical Report</button>
+        </div>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+    <footer class="footer">
+        <p>© 2026 AI Tumor Detection System</p>
+    </footer>
+</body>
+
+</html>

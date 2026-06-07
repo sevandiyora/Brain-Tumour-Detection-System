@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>How It Works</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>🧠 AI Tumor Detection</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/how" class="active">How</a>
+            <a href="/future">Future</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>AI Processing Pipeline</h3>
+
+        <div class="pipeline">
+            <div class="step">Upload MRI</div>
+            <div class="arrow">→</div>
+            <div class="step">Preprocessing</div>
+            <div class="arrow">→</div>
+            <div class="step">Model Prediction</div>
+            <div class="arrow">→</div>
+            <div class="step">Segmentation</div>
+            <div class="arrow">→</div>
+            <div class="step">Report</div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>How the System Works</h2>
+
+            <p>
+                The system follows a deep learning pipeline to process MRI images and generate tumor segmentation results.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>1. Image Input</h3>
+            <p>
+                The user uploads a T1-weighted MRI scan. The image is resized and normalized before being passed to the models.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>2. Preprocessing</h3>
+            <p>
+                Each image is resized to 256×256 pixels and normalized to improve model performance. Data augmentation techniques such as rotation and flipping were applied during training. :contentReference[oaicite:2]{index=2}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>3. Model Prediction</h3>
+
+            <p><b>U-Net:</b> Performs pixel-wise segmentation for fast detection.</p>
+
+            <p><b>Mask R-CNN:</b> Detects tumor regions and generates precise masks.</p>
+
+        </div>
+
+        <div class="card">
+            <h3>U-Net Architecture</h3>
+
+            <div class="diagram-container">
+                <img src="/static/images/unet.png" class="diagram-img">
+            </div>
+
+            <p>
+                U-Net uses an encoder-decoder structure with skip connections that help preserve spatial information, making it highly effective for medical image segmentation.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Mask R-CNN Architecture</h3>
+
+            <div class="diagram-container">
+                <img src="/static/images/maskrcnn.png" class="diagram-img">
+            </div>
+
+            <p>
+                Mask R-CNN extends object detection by adding a segmentation branch, allowing it to generate pixel-level masks along with bounding boxes.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>4. Output Generation</h3>
+
+            <ul style="text-align:left;">
+                <li>Segmentation overlay on MRI</li>
+                <li>Binary tumor mask</li>
+                <li>Heatmap visualization</li>
+                <li>Tumor area calculation</li>
+                <li>Confidence score</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>5. Report Generation</h3>
+
+            <p>
+                The system generates a professional medical-style report including model predictions, tumor area, confidence scores, and visual results.
+            </p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 AI Tumor Detection System</p>
+    </footer>
+</body>
+
+</html>

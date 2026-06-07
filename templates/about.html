@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>🧠 AI Tumor Detection</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/about" class="active">About</a>
+            <a href="/how">How</a>
+            <a href="/future">Future</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>About This Project</h2>
+
+            <p>
+                This project focuses on automated brain tumor detection and segmentation using deep learning techniques on MRI scans. The goal is to assist medical professionals by providing faster and more consistent tumor localization.
+            </p>
+
+            <p>
+                Manual tumor segmentation is time-consuming and subject to variability among radiologists. This system leverages artificial intelligence to improve accuracy and efficiency in medical image analysis.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Models Used</h3>
+
+            <p><b>U-Net:</b> A convolutional neural network designed for biomedical image segmentation with encoder-decoder architecture and skip connections.</p>
+
+            <p><b>Mask R-CNN:</b> An instance segmentation model that detects objects and generates pixel-level masks with high precision.</p>
+
+            <p>
+                Both models were trained on the same MRI dataset and evaluated under identical conditions to ensure fair comparison. :contentReference[oaicite:1]{index=1}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Dataset</h3>
+
+            <p>
+                The models were trained using the BRISC 2025 MRI dataset, which contains:
+            </p>
+
+            <ul style="text-align:left;">
+                <li>6,000 MRI images</li>
+                <li>Pixel-level tumor annotations</li>
+                <li>Multiple tumor types (glioma, meningioma, pituitary)</li>
+                <li>Different orientations (axial, coronal, sagittal)</li>
+            </ul>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <p>© 2026 AI Tumor Detection System</p>
+    </footer>
+</body>
+
+</html>

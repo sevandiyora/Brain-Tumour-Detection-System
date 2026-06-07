@@ -1,0 +1,29 @@
+__pycache__/
+*.pyc
+
+.venv/
+venv/
+
+reports/
+
+static/uploads/
+static/outputs/
+
+*.pdf
+
+models/*.pth
+
+.env
+# Generated AI outputs
+static/output_*.png
+static/heatmap_*.png
+
+# Reports
+reports/
+report.pdf
+
+# Models
+models/*.pth
+
+# Word temp files
+~$*
