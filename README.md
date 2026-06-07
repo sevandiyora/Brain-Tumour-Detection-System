@@ -4,11 +4,24 @@ This project is a Flask-based web application that detects and segments brain tu
 
 ---
 
+## Project Architecture
+
+User Uploads MRI
+        ↓
+Flask Web Application
+        ↓
+U-Net / Mask R-CNN
+        ↓
+Tumor Segmentation
+        ↓
+Heatmap Generation
+        ↓
+PDF Medical Report
+
 ## 🚀 Features
 
 * Upload MRI scan
 * Select model:
-
   * U-Net
   * Mask R-CNN
   * Both (comparison)
@@ -17,8 +30,6 @@ This project is a Flask-based web application that detects and segments brain tu
 * Tumor area calculation
 * Confidence score display
 * Downloadable PDF medical report
-
----
 
 ## 🏗️ Tech Stack
 
