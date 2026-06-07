@@ -17,7 +17,7 @@ last_conf = 0
 app = Flask(__name__)
 
 # 🔥 GRADIO API
-client = Client("https://38e95d6990c434ded5.gradio.live/")
+client = Client("https://huggingface.co/spaces/sevendiyora/brain-tumor-detection-api")
 
 # App routes 
 @app.route("/")
