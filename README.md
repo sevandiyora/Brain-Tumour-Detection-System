@@ -1,62 +1,133 @@
-# 🧠 AI Brain Tumor Detection Web App
+# 🧠 AI-Powered Brain Tumor Detection & Segmentation System
 
-This project is a Flask-based web application that detects and segments brain tumors from MRI images using deep learning models (**U-Net** and **Mask R-CNN**). It provides visualization, heatmaps, and generates a professional PDF medical report.
+A full-stack AI-powered medical imaging platform that analyzes brain MRI scans and performs automated tumor segmentation using deep learning. The application provides tumor visualization, heatmap generation, and downloadable PDF reports through an interactive web interface.
+
+## 🌐 Live Demo
+
+**Web Application:**
+https://brain-tumour-detection-system-xzyz.onrender.com
+
+**AI Inference Service:**
+https://huggingface.co/spaces/sevendiyora/brain-tumor-detection-api
+
+**Source Code:**
+https://github.com/sevandiyora/Brain-Tumour-Detection-System
 
 ---
 
-## Project Architecture
+## 📌 Overview
 
-User Uploads MRI
-        ↓
-Flask Web Application
-        ↓
-U-Net / Mask R-CNN
-        ↓
-Tumor Segmentation
-        ↓
-Heatmap Generation
-        ↓
-PDF Medical Report
+This project was developed as part of graduate-level research in Computer Science. It combines modern web development and deep learning techniques to assist in the analysis of brain MRI scans.
+
+The system allows users to:
+
+* Upload MRI brain scans
+* Perform automated tumor segmentation
+* Visualize segmented tumor regions
+* Generate heatmap visualizations
+* Download AI-generated PDF reports
+* Access results through a publicly deployed web application
+
+---
+
+## 🏗️ System Architecture
+
+```text
+User Uploads MRI Scan
+          │
+          ▼
+ Flask Web Application
+          │
+          ▼
+ Hugging Face AI Service
+          │
+          ▼
+ U-Net Deep Learning Model
+          │
+          ▼
+ Tumor Segmentation
+          │
+          ├──► Overlay Visualization
+          ├──► Heatmap Generation
+          └──► PDF Report Creation
+```
+
+---
 
 ## 🚀 Features
 
-* Upload MRI scan
-* Select model:
-  * U-Net
-  * Mask R-CNN
-  * Both (comparison)
-* Tumor segmentation overlay
+### AI-Powered Tumor Segmentation
+
+* Automated MRI image analysis
+* Deep learning-based segmentation
+* High-quality tumor boundary visualization
+
+### Medical Image Visualization
+
+* Tumor overlay generation
 * Heatmap visualization
-* Tumor area calculation
-* Confidence score display
-* Downloadable PDF medical report
+* Side-by-side result comparison
 
-## 🏗️ Tech Stack
+### Report Generation
 
-* **Frontend:** HTML, CSS, JavaScript
-* **Backend:** Flask (Python)
-* **ML Models:** U-Net, Mask R-CNN (via Gradio API)
-* **Libraries:**
+* Automated PDF medical reports
+* Tumor area estimation
+* Prediction confidence information
 
-  * OpenCV
-  * NumPy
-  * Pillow
-  * ReportLab
-  * Gradio Client
+### Web Application
+
+* Responsive user interface
+* Real-time image upload
+* Public cloud deployment
+* Integrated AI inference pipeline
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Technology Stack
 
-```
-brain_tumor_webapp/
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Backend
+
+* Flask
+* Python
+
+### Artificial Intelligence
+
+* U-Net
+* Computer Vision
+* Medical Image Segmentation
+
+### Libraries & Tools
+
+* OpenCV
+* NumPy
+* Pillow
+* ReportLab
+* Gradio Client
+* Hugging Face Spaces
+
+### Deployment
+
+* Render
+* Hugging Face
+* GitHub
+
+---
+
+## 📂 Project Structure
+
+```text
+Brain-Tumour-Detection-System/
 │
 ├── app.py
 ├── requirements.txt
-├── static/
-│   ├── style.css
-│   ├── app.js
-│   └── generated images
+├── src/
+│   └── unet_model.py
 │
 ├── templates/
 │   ├── index.html
@@ -65,141 +136,107 @@ brain_tumor_webapp/
 │   ├── how.html
 │   └── future.html
 │
-└── report.pdf
+├── static/
+│   ├── style.css
+│   ├── app.js
+│   ├── images/
+│   └── generated_outputs/
+│
+└── docs/
 ```
-## Live Demo
-
-https://huggingface.co/spaces/sevendiyora/brain-tumor-detection-api
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation
 
-### 🔹 Step 1: Clone the repository
+### Clone Repository
 
 ```bash
-git clone <your-repo-url>
-cd brain_tumor_webapp
+git clone https://github.com/sevandiyora/Brain-Tumour-Detection-System.git
+cd Brain-Tumour-Detection-System
 ```
 
----
-
-### 🔹 Step 2: Create virtual environment
+### Create Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-Activate:
+### Activate Environment
 
-**Windows:**
+Windows:
 
 ```bash
 .venv\Scripts\activate
 ```
 
-**Mac/Linux:**
+Linux / macOS:
 
 ```bash
 source .venv/bin/activate
 ```
 
----
-
-### 🔹 Step 3: Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-### 🔹 Step 4: Run Gradio Model (IMPORTANT)
-
-Make sure your ML model is running and gives a URL like:
-
-```
-https://xxxx.gradio.live/
-```
-
-Then update in `app.py`:
-
-```python
-client = Client("YOUR_GRADIO_URL")
-```
-
----
-
-### 🔹 Step 5: Run Flask App
+### Run Application
 
 ```bash
 python app.py
 ```
 
----
+Open:
 
-### 🔹 Step 6: Open in browser
-
-```
+```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-## 🧪 How to Use
+## 🧪 Usage
 
-1. Upload MRI image
-2. Select model
-3. Click **Run AI Detection**
-4. View:
-
-   * Segmentation results
-   * Heatmaps
-   * Confidence & tumor area
-5. Click **Download Report**
+1. Upload a brain MRI image
+2. Start AI detection
+3. View tumor segmentation results
+4. Analyze generated heatmaps
+5. Download the PDF report
 
 ---
 
-## ⚠️ Common Issues
+## 📊 Research Highlights
 
-### ❌ Gradio Error
-
-```
-Could not fetch config
-```
-
-✔ Restart model → update URL
+* Applied deep learning techniques for medical image segmentation
+* Developed a cloud-hosted AI inference pipeline
+* Integrated AI services with a production-style web application
+* Automated visualization and reporting workflow
 
 ---
 
-### ❌ No Report Generated
+## 🔮 Future Enhancements
 
-✔ Run detection first
-
----
-
-### ❌ Images not loading
-
-✔ Check `/static` folder paths
-
----
-
-## 📈 Future Improvements
-
-* Deploy models permanently (HuggingFace)
-* Add 3D MRI support
-* Real-time inference
-* Doctor dashboard
+* Mask R-CNN cloud deployment
+* Multi-model comparison dashboard
+* 3D MRI volume segmentation
+* User authentication system
+* Patient history management
+* Clinical decision-support features
 
 ---
 
 ## 👨‍💻 Author
 
+**Sevan Diyora**
+M.S. Computer Science
 Montclair State University
-MS Computer Science
+
+LinkedIn: https://www.linkedin.com/in/sevan-diyora
+GitHub: https://github.com/sevandiyora
 
 ---
 
 ## 📄 License
 
-This project is for academic and educational use.
+This project was developed for educational, research, and portfolio purposes.
